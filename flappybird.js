@@ -37,7 +37,6 @@ let gravity = 0.3;
 let gameOver = false;
 let score = 0;
 
-
 window.onload = function () {
     board = document.getElementById("board");
     board.height = boardheight;
