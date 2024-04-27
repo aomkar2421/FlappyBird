@@ -113,18 +113,29 @@ function update() {
 
     // score
     context.fillStyle = "white";
-    context.font = "45px sans-serif";
-    context.fillText(score, 5, 45);
+    context.font = "25px Monaco";
+    context.fillText('Score :-'+score, 5, 45);
 
     if (gameOver) {
-        context.fillText("GAME OVER", 5, 90);
+    
+        context.fillStyle = "rgba(153, 50, 204, 0.5)"; // Set the color for the background
+        context.fillRect(0, 0, boardwidth, boardheight);
+    
+        context.fillStyle = "black"; // Set the color for the score text
+        context.fillText(score, boardwidth / 2, boardheight / 2);
+        context.fillStyle = "black"; // Set the color for the "GAME OVER" text
+        context.fillText("Game Over", boardwidth / 3, boardheight / 2.2);
+        context.font = '40px Copperplate'; // Set the font for the text
     }
+    
 }
 
 function placePipes() {
     if (gameOver) {
         return;
     }
+    
+    // let randomPipeY = Math.random() * (board.height - pipeheight - openingSpace * 2) + openingSpace;
     let randomPipeY = pipey - pipeheight / 4 - Math.random() * (pipeheight / 2);
     let openingSpace = board.height / 4;
 
