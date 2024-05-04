@@ -1,4 +1,3 @@
-
 //Board
 let board;
 let boardheight = 640;
@@ -31,7 +30,7 @@ let bottomPipeImage;
 
 //Physics
 let velocityx = -2;
-let velocityy = 0;
+let velocityy = 0; 
 let gravity = 0.3;
 
 let gameOver = false;
@@ -174,7 +173,7 @@ function moveBird(e) {
         }, 1000);
     }
 }
-
+ 
 function detectCollision(a, b) {
     return (
         a.x < b.x + b.width &&
